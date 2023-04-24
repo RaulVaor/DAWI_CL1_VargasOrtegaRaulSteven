@@ -14,7 +14,7 @@ cant_clien_area int
 
 -- Creamos la tabla clientes
 create table clientes (
-id_cliente int primary key auto_increment,
+id_cliente int primary key,
 nom_cliente varchar(40),
 id_area int,
 edad_cliente int,
@@ -24,11 +24,11 @@ foreign key(id_area) references areas(id_area)
 );
 
 -- ingresamos 3 registros en la tabla areas
-insert into areas values(null,"Gamer", 1);
-insert into areas values(null,"Oficina", 1);
-insert into areas values(null,"perifericos", 1);
+insert into areas values(1,"Gamer", 1);
+insert into areas values(2,"Oficina", 1);
+insert into areas values(3,"perifericos", 1);
 
 -- ingresamos 3 registros en la tabla clientes
-insert into clientes values(null, "Raul Vargas", 2, 20, "raulvaor51@gmail.com", '71560030');
-insert into clientes values(null, "Sergio Huaman", 1, 32, "sergiohuaman@gmail.com", '65813245');
-insert into clientes values(null, "Manuel Alcantara", 3, 28, "almanuel@gmail.com", '68214503');
+insert into clientes values(1, "Raul Vargas", 2, 20, "raulvaor51@gmail.com", '71560030');
+insert into clientes values(2, "Sergio Huaman", 1, 32, "sergiohuaman@gmail.com", '65813245');
+insert into clientes values(3, "Manuel Alcantara", 3, 28, "almanuel@gmail.com", '68214503');
