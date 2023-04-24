@@ -1,0 +1,34 @@
+-- Creamos la base de datos
+create database EC1_Vargas;
+
+-- usamos la base de datos
+use EC1_Vargas;
+
+-- Creamos la tabla areas
+create table areas(
+id_area int primary key auto_increment,
+nom_area varchar(20),
+cant_clien_area int
+);
+
+
+-- Creamos la tabla clientes
+create table clientes (
+id_cliente int primary key auto_increment,
+nom_cliente varchar(40),
+id_area int,
+edad_cliente int,
+correo_cliente varchar(30),
+dni_cliente char(8),
+foreign key(id_area) references areas(id_area)
+);
+
+-- ingresamos 3 registros en la tabla areas
+insert into areas values(null,"Gamer", 1);
+insert into areas values(null,"Oficina", 1);
+insert into areas values(null,"perifericos", 1);
+
+-- ingresamos 3 registros en la tabla clientes
+insert into clientes values(null, "Raul Vargas", 2, 20, "raulvaor51@gmail.com", '71560030');
+insert into clientes values(null, "Sergio Huaman", 1, 32, "sergiohuaman@gmail.com", '65813245');
+insert into clientes values(null, "Manuel Alcantara", 3, 28, "almanuel@gmail.com", '68214503');
