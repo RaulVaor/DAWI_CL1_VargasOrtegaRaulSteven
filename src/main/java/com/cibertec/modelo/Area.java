@@ -1,19 +1,24 @@
 package com.cibertec.modelo;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "areas")
 public class Area {
 	
-	private static final long serialVersionUID = 1L; 
 	
 	@Id
 	@Column(name="id_area")
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(name="nom_area")
 	private String nombre;
@@ -21,6 +26,8 @@ public class Area {
 	@Column(name="cant_clien_area")
 	private int cantidadClientes;
 	
+	@OneToMany(mappedBy = "idarea")
+	private List<Cliente> listaClientes;
 	
 	
 	
